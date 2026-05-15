@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>画论语义典藏 · 智能语料库</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background: linear-gradient(145deg, #e9f0f5 0%, #d9e2ec 100%);
+            font-family: system-ui, -apple-system, 'Segoe UI', 'Noto Sans CJK SC', sans-serif;
+            padding: 2rem 1.5rem;
+            color: #1a2c3e;
+        }
+        .container { max-width: 1400px; margin: 0 auto; }
+        .hero {
+            background: rgba(255, 255, 255, 0.55);
+            backdrop-filter: blur(12px);
+            border-radius: 2.5rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+        h1 { font-size: 2rem; font-weight: 600; background: linear-gradient(135deg, #1e3c4c, #2b5c6f); background-clip: text; -webkit-background-clip: text; color: transparent; }
+        .sub { color: #3e5a6b; margin-top: 0.5rem; font-size: 0.9rem; }
+        .search-panel {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+        }
+        .search-flex {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            align-items: flex-end;
+        }
+        .field-group { flex: 2; min-width: 180px; }
+        .field-group label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #5b7a92;
+            margin-bottom: 0.3rem;
+            display: block;
+        }
+        .field-group input, .field-group select {
+            width: 100%;
+            padding: 0.7rem 1rem;
+            border-radius: 1.2rem;
+            border: 1px solid #dce5ec;
+            font-size: 0.9rem;
+        }
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #f0f4f8;
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+        }
+        .checkbox-group label {
+            font-size: 0.8rem;
+            color: #2c6075;
+            cursor: pointer;
+        }
+        button {
+            background: #2c5a6e;
+            padding: 0.7rem 1.8rem;
+            border-radius: 2rem;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+        button:hover { background: #1e4456; transform: translateY(-1px); }
+        .reset-btn { background: #6c8d9e; }
+        .reset-btn:hover { background: #557484; }
+        .toggle-filter-btn {
+            background: #8aaec2;
+            font-size: 0.8rem;
+            padding: 0.4rem 1rem;
+        }
+        .filter-section {
+            margin: 1rem 0 0 0;
+            padding-top: 1rem;
+            border-top: 1px solid #e2edf2;
+            display: none;
+        }
+        .filter-section.show {
+            display: block;
+        }
+        .filter-title {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #5b7a92;
+            margin-bottom: 0.5rem;
+        }
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            max-height: 150px;
+            overflow-y: auto;
+        }
+        .filter-btn {
+            background: #eef3f9;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            cursor: pointer;
+            transition: 0.1s;
+            color: #2c6075;
+        }
+        .filter-btn:hover { background: #d4e2ec; transform: scale(1.02); }
+        .stats {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+            color: #4b6a7f;
+            border-top: 1px solid #e2edf2;
+            padding-top: 1rem;
+        }
+        .results-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+            gap: 1.2rem;
+        }
+        .card {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 1.2rem;
+            transition: 0.2s;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            cursor: pointer;
+        }
+        .card:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.15); }
+        .source-tag {
+            background: #eef3f9;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            display: inline-block;
+            margin-bottom: 0.8rem;
+        }
+        .person-tags {
+            display: inline-block;
+            background: #e8eef3;
+            font-size: 0.7rem;
+            padding: 0.2rem 0.7rem;
+            border-radius: 20px;
+            margin-left: 0.5rem;
+            color: #2c6075;
+        }
+        .chinese {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #1f3e4c;
+            margin-bottom: 0.6rem;
+            border-left: 3px solid #98b7cc;
+            padding-left: 0.7rem;
+        }
+        .eng-block {
+            margin-top: 0.5rem;
+            border-top: 1px solid #eef3f9;
+            padding-top: 0.5rem;
+            position: relative;
+        }
+        .eng-header {
+            font-weight: 600;
+            color: #1e3b4a;
+            background: #eef2f5;
+            padding: 0.1rem 0.4rem;
+            border-radius: 6px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            display: inline-block;
+            white-space: nowrap;
+            margin-bottom: 0.3rem;
+        }
+        .eng-text {
+            font-size: 0.8rem;
+            color: #2c4f64;
+            line-height: 1.4;
+            padding-right: 2rem;
+            cursor: pointer;
+            border-bottom: 1px dashed transparent;
+            transition: border-color 0.2s;
+        }
+        .eng-text:hover {
+            border-bottom-color: #98b7cc;
+        }
+        .speak-btn {
+            position: absolute;
+            top: 0.3rem;
+            right: 0;
+            background: none;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+            padding: 0.2rem 0.4rem;
+            border-radius: 20px;
+            color: #5b7a92;
+        }
+        .speak-btn:hover { background: #eef3f9; transform: none; }
+        .tag-link {
+            display: inline-block;
+            background: #f0f4f8;
+            padding: 0.15rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.7rem;
+            margin-right: 0.3rem;
+            margin-top: 0.3rem;
+            cursor: pointer;
+            transition: 0.1s;
+        }
+        .tag-link:hover { background: #d9e2ec; transform: scale(1.02); }
+        .highlight { background: #f9e45b; padding: 0 2px; border-radius: 4px; font-weight: 500; }
+        
+        /* 模态框 - 45vh */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.7);
+            backdrop-filter: blur(5px);
+            justify-content: center;
+            align-items: flex-start;
+        }
+        .modal-content {
+            background: white;
+            padding: 2rem;
+            width: 80%;
+            max-width: 800px;
+            border-radius: 2rem;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            margin-top: 45vh;
+            transform: translateY(-50%);
+        }
+        .modal-content .chinese { font-size: 1.4rem; }
+        .modal-content .eng-text { font-size: 1rem; }
+        .close {
+            position: absolute;
+            right: 1.5rem;
+            top: 1rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            cursor: pointer;
+            color: #8aa0ae;
+        }
+        .close:hover { color: #1a2c3e; }
+        
+        /* 首次访问提示 Toast */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #2c5a6e;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            z-index: 1100;
+            animation: fadeInOut 3s ease-in-out forwards;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        @keyframes fadeInOut {
+            0% { opacity: 0; transform: translateX(20px); }
+            15% { opacity: 1; transform: translateX(0); }
+            85% { opacity: 1; transform: translateX(0); }
+            100% { opacity: 0; transform: translateX(20px); visibility: hidden; }
+        }
+        
+        .loading, .no-results { text-align: center; padding: 3rem; color: #8aa0ae; grid-column: 1 / -1; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="hero">
+        <h1>画论语义典藏 · 智能语料库</h1>
+        <div class="sub">《古画品录》| 中英双语 | 精确/模糊搜索 | 双击单词查词 | 标签关联 | 语音朗读</div>
+    </div>
+    <div class="search-panel">
+        <div class="search-flex">
+            <div class="field-group">
+                <label>搜索范围</label>
+                <select id="searchField">
+                    <option value="all">全部字段</option>
+                    <option value="chinese">中文原文</option>
+                    <option value="english">英文翻译</option>
+                    <option value="tags">标签</option>
+                </select>
+            </div>
+            <div class="field-group">
+                <label>关键词 / 人名</label>
+                <input type="text" id="searchInput" placeholder="如：气韵、六法、陆探微、spirit...">
+            </div>
+            <div class="checkbox-group">
+                <input type="checkbox" id="fuzzyCheckbox">
+                <label for="fuzzyCheckbox">🔍 模糊搜索（容错拼写错误）</label>
+            </div>
+            <button id="searchBtn">🔍 检索</button>
+            <button id="resetBtn" class="reset-btn">🏠 重置 / 显示全部</button>
+        </div>
+        <div style="margin-top:0.8rem;">
+            <button id="toggleFilterBtn" class="toggle-filter-btn">🏷️ 显示标签筛选</button>
+        </div>
+        <div class="filter-section" id="filterSection">
+            <div class="filter-title">🏷️ 快速筛选（点击标签精确搜索）</div>
+            <div class="filter-buttons" id="filterButtons"></div>
+        </div>
+        <div class="stats" id="stats">正在加载语料库...</div>
+    </div>
+    <div id="results" class="results-grid"><div class="loading">📖 正在加载典藏数据...</div></div>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalBody"></div>
+    </div>
+</div>
+
+<script>
+    let corpusData = [];
+    let allTags = new Map(); // 存储标签及其首次出现的 id
+
+    // 显示首次访问提示
+    function showFirstVisitToast() {
+        const hasVisited = localStorage.getItem('doubleClickTipShown');
+        if (!hasVisited) {
+            const toast = document.createElement('div');
+            toast.className = 'toast';
+            toast.innerHTML = '💡 提示：双击英文句子中的任意单词，可跳转韦氏词典查词';
+            document.body.appendChild(toast);
+            localStorage.setItem('doubleClickTipShown', 'true');
+            setTimeout(() => {
+                if (toast.parentNode) toast.remove();
+            }, 3000);
+        }
+    }
+
+    // 编辑距离（用于模糊搜索）
+    function levenshteinDistance(a, b) {
+        const matrix = Array(b.length + 1).fill(null).map(() => Array(a.length + 1).fill(null));
+        for (let i = 0; i <= a.length; i++) matrix[0][i] = i;
+        for (let j = 0; j <= b.length; j++) matrix[j][0] = j;
+        for (let j = 1; j <= b.length; j++) {
+            for (let i = 1; i <= a.length; i++) {
+                const cost = a[i-1] === b[j-1] ? 0 : 1;
+                matrix[j][i] = Math.min(
+                    matrix[j][i-1] + 1,
+                    matrix[j-1][i] + 1,
+                    matrix[j-1][i-1] + cost
+                );
+            }
+        }
+        return matrix[b.length][a.length];
+    }
+
+    function fuzzyMatch(text, keyword, maxDistance = 2) {
+        if (!text || !keyword) return false;
+        const keywordLower = keyword.toLowerCase();
+        const textLower = text.toLowerCase();
+        if (textLower.includes(keywordLower)) return true;
+        if (keywordLower.length < 2) return false;
+        const words = textLower.split(/[\s,;，；、]+/);
+        for (let word of words) {
+            if (word.length >= 2 && levenshteinDistance(word, keywordLower) <= maxDistance) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    function exactMatch(text, keyword) {
+        if (!text || !keyword) return false;
+        return text.toLowerCase().includes(keyword.toLowerCase());
+    }
+
+    function highlightText(text, keyword) {
+        if (!keyword || keyword.trim() === "" || !text) return text;
+        const keywordLower = keyword.toLowerCase();
+        const textLower = text.toLowerCase();
+        if (!textLower.includes(keywordLower)) return text;
+        const regex = new RegExp(`(${keyword.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')})`, 'gi');
+        return text.replace(regex, `<span class="highlight">$1</span>`);
+    }
+
+    function renderTags(tagsStr) {
+        if (!tagsStr) return '';
+        const tags = tagsStr.split(';');
+        return tags.map(tag => `<span class="tag-link" data-tag="${tag}">🏷️ ${tag}</span>`).join('');
+    }
+
+    function speakEnglish(text) {
+        if (!text || !window.speechSynthesis) return;
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'en-US';
+        utterance.rate = 0.9;
+        window.speechSynthesis.cancel();
+        window.speechSynthesis.speak(utterance);
+    }
+
+    function lookupWord(word) {
+        if (!word) return;
+        const cleanWord = word.trim().replace(/[^\w\-']/g, '');
+        if (cleanWord.length > 0) {
+            window.open(`https://www.merriam-webster.com/dictionary/${encodeURIComponent(cleanWord)}`, '_blank');
+        }
+    }
+
+    function renderResults(data, keyword) {
+        const container = document.getElementById('results');
+        if (data.length === 0) {
+            container.innerHTML = '<div class="no-results">🍃 未找到匹配的语料</div>';
+            document.getElementById('stats').innerHTML = `共 ${corpusData.length} 条语料 · 找到 0 条匹配`;
+            return;
+        }
+        let html = '';
+        for (let item of data) {
+            const englishText = item.english || "";
+            const sirenText = item.siren || "";
+            
+            html += `<div class="card" data-id="${item.id}">
+                <div class="source-tag">📜 ${item.source || '古画品录'}</div>
+                ${item.tags ? `<div class="person-tags">🏷️ 标签: ${renderTags(item.tags)}</div>` : ''}
+                <div class="chinese">${highlightText(item.chinese, keyword)}</div>
+                <div class="eng-block">
+                    <div class="eng-header">英 (Acker)</div>
+                    <div class="eng-text" title="双击单词查词">${highlightText(englishText, keyword)}</div>
+                    <button class="speak-btn" data-text="${englishText.replace(/"/g, '&quot;')}">🔊</button>
+                </div>`;
+            if (sirenText) {
+                html += `<div class="eng-block">
+                    <div class="eng-header">英 (Siren)</div>
+                    <div class="eng-text" title="双击单词查词">${highlightText(sirenText, keyword)}</div>
+                    <button class="speak-btn" data-text="${sirenText.replace(/"/g, '&quot;')}">🔊</button>
+                </div>`;
+            }
+            html += `</div>`;
+        }
+        container.innerHTML = html;
+        document.getElementById('stats').innerHTML = `共 ${corpusData.length} 条语料 · 找到 ${data.length} 条匹配`;
+
+        document.querySelectorAll('.tag-link').forEach(el => {
+            el.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const tag = el.getAttribute('data-tag');
+                document.getElementById('searchInput').value = tag;
+                document.getElementById('searchField').value = 'tags';
+                document.getElementById('fuzzyCheckbox').checked = false;
+                performSearch(tag, false);
+            });
+        });
+        document.querySelectorAll('.speak-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const text = btn.getAttribute('data-text');
+                speakEnglish(text);
+            });
+        });
+        document.querySelectorAll('.card').forEach(card => {
+            card.addEventListener('click', (e) => {
+                if (e.target.classList.contains('speak-btn') || e.target.classList.contains('tag-link')) return;
+                const id = parseInt(card.getAttribute('data-id'));
+                const item = corpusData.find(d => d.id === id);
+                if (item) showModal(item);
+            });
+        });
+    }
+
+    // 全局双击查词
+    document.addEventListener('dblclick', (e) => {
+        const target = e.target;
+        const isInEnglish = target.closest('.eng-text');
+        if (!isInEnglish) return;
+        const selection = window.getSelection().toString().trim();
+        if (selection) {
+            lookupWord(selection);
+        }
+    });
+
+    function showModal(item) {
+        const modal = document.getElementById('modal');
+        const modalBody = document.getElementById('modalBody');
+        const englishText = item.english || "";
+        const sirenText = item.siren || "";
+        modalBody.innerHTML = `
+            <div class="source-tag">📜 ${item.source || '古画品录'}</div>
+            <div class="chinese" style="font-size:1.4rem;">${item.chinese}</div>
+            <div class="eng-block" style="margin-top:1rem;">
+                <div class="eng-header">英 (Acker)</div>
+                <div class="eng-text" title="双击单词查词">${englishText}</div>
+                <button class="speak-btn" data-text="${englishText.replace(/"/g, '&quot;')}">🔊</button>
+            </div>
+            ${sirenText ? `<div class="eng-block" style="margin-top:1rem;">
+                <div class="eng-header">英 (Siren)</div>
+                <div class="eng-text" title="双击单词查词">${sirenText}</div>
+                <button class="speak-btn" data-text="${sirenText.replace(/"/g, '&quot;')}">🔊</button>
+            </div>` : ''}
+            ${item.tags ? `<div style="margin-top:1rem;"><strong>🏷️ 标签:</strong> ${item.tags.split(';').map(t => `<span class="tag-link" data-tag="${t}">${t}</span>`).join('')}</div>` : ''}
+        `;
+        modal.style.display = 'flex';
+        modalBody.querySelectorAll('.speak-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const text = btn.getAttribute('data-text');
+                speakEnglish(text);
+            });
+        });
+        modalBody.querySelectorAll('.tag-link').forEach(el => {
+            el.addEventListener('click', () => {
+                const tag = el.getAttribute('data-tag');
+                document.getElementById('searchInput').value = tag;
+                document.getElementById('searchField').value = 'tags';
+                document.getElementById('fuzzyCheckbox').checked = false;
+                performSearch(tag, false);
+                modal.style.display = 'none';
+            });
+        });
+    }
+
+    function performSearch(keyword, isFuzzy = null) {
+        const field = document.getElementById('searchField').value;
+        const useFuzzy = (isFuzzy !== null) ? isFuzzy : document.getElementById('fuzzyCheckbox').checked;
+        
+        if (!keyword || keyword.trim() === "") {
+            renderResults(corpusData, "");
+            return;
+        }
+        const lowerKeyword = keyword.toLowerCase().trim();
+        let filtered;
+        
+        if (field === 'tags') {
+            filtered = corpusData.filter(item => {
+                const tags = (item.tags || "").toLowerCase();
+                return tags.split(';').includes(lowerKeyword);
+            });
+        } else {
+            filtered = corpusData.filter(item => {
+                if (field === 'chinese') {
+                    return useFuzzy ? fuzzyMatch(item.chinese, lowerKeyword) : exactMatch(item.chinese, lowerKeyword);
+                }
+                if (field === 'english') {
+                    const text = item.english || "";
+                    return useFuzzy ? fuzzyMatch(text, lowerKeyword) : exactMatch(text, lowerKeyword);
+                }
+                if (field === 'all') {
+                    const matchChinese = useFuzzy ? fuzzyMatch(item.chinese, lowerKeyword) : exactMatch(item.chinese, lowerKeyword);
+                    const matchEnglish = useFuzzy ? fuzzyMatch(item.english || "", lowerKeyword) : exactMatch(item.english || "", lowerKeyword);
+                    const matchTags = useFuzzy ? fuzzyMatch(item.tags || "", lowerKeyword) : exactMatch(item.tags || "", lowerKeyword);
+                    return matchChinese || matchEnglish || matchTags;
+                }
+                return false;
+            });
+        }
+        renderResults(filtered, keyword);
+    }
+
+    function search() { performSearch(document.getElementById('searchInput').value); }
+    
+    function resetAndShowAll() {
+        document.getElementById('searchInput').value = '';
+        document.getElementById('fuzzyCheckbox').checked = false;
+        renderResults(corpusData, "");
+    }
+
+    // 按 Excel 中首次出现顺序排列标签
+    function updateFilterButtons() {
+        const container = document.getElementById('filterButtons');
+        // 按照 id 顺序排序
+        const sortedTags = Array.from(allTags.entries())
+            .sort((a, b) => a[1] - b[1])
+            .map(entry => entry[0]);
+        
+        container.innerHTML = sortedTags.map(tag => `<span class="filter-btn" data-tag="${tag}">🏷️ ${tag}</span>`).join('');
+        container.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tag = btn.getAttribute('data-tag');
+                document.getElementById('searchInput').value = tag;
+                document.getElementById('searchField').value = 'tags';
+                document.getElementById('fuzzyCheckbox').checked = false;
+                performSearch(tag, false);
+            });
+        });
+    }
+
+    // 折叠/展开标签筛选
+    let filterVisible = false;
+    document.getElementById('toggleFilterBtn').addEventListener('click', () => {
+        const section = document.getElementById('filterSection');
+        filterVisible = !filterVisible;
+        if (filterVisible) {
+            section.classList.add('show');
+            document.getElementById('toggleFilterBtn').textContent = '🏷️ 隐藏标签筛选';
+        } else {
+            section.classList.remove('show');
+            document.getElementById('toggleFilterBtn').textContent = '🏷️ 显示标签筛选';
+        }
+    });
+
+    async function loadData() {
+        try {
+            const response = await fetch('data.json');
+            if (!response.ok) throw new Error('HTTP error! status: ' + response.status);
+            corpusData = await response.json();
+            
+            // 按 id 顺序记录每个标签首次出现的位置
+            allTags.clear();
+            corpusData.forEach(item => {
+                if (item.tags) {
+                    const tags = item.tags.split(';');
+                    tags.forEach(tag => {
+                        if (!allTags.has(tag)) {
+                            allTags.set(tag, item.id);
+                        }
+                    });
+                }
+            });
+            
+            updateFilterButtons();
+            document.getElementById('stats').innerHTML = `✅ 成功加载 ${corpusData.length} 条语料 · 支持 ${allTags.size} 个标签 · 默认精确搜索`;
+            renderResults(corpusData, "");
+            showFirstVisitToast();
+        } catch (err) {
+            console.error(err);
+            document.getElementById('results').innerHTML = `<div class="no-results">⚠️ 无法加载 data.json 文件。<br>请确保已通过 Python 服务器运行（双击 start_server.bat）</div>`;
+        }
+    }
+
+    document.getElementById('searchBtn').addEventListener('click', search);
+    document.getElementById('resetBtn').addEventListener('click', resetAndShowAll);
+    document.getElementById('searchInput').addEventListener('keypress', (e) => { if (e.key === 'Enter') search(); });
+    document.querySelector('.close').addEventListener('click', () => { document.getElementById('modal').style.display = 'none'; });
+    window.onclick = (e) => { if (e.target === document.getElementById('modal')) document.getElementById('modal').style.display = 'none'; };
+    loadData();
+</script>
+</body>
+</html>

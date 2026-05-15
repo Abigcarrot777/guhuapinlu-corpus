@@ -1,0 +1,1021 @@
+[
+  {
+    "id": 1,
+    "source": "古画品录",
+    "chinese": "古画品录，南齐 谢赫 著",
+    "english": "THE KU HUA P'IN LU OR OLD RECORD OF THE CLASSIFICATIONS OF PAINTERS, BY HSIEH HO, SOUTHERN CH'I DYNASTY",
+    "tags": "",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 2,
+    "source": "古画品录",
+    "chinese": "夫画品者，盖众画之优劣也",
+    "english": "Now by classification of painters is meant the (relative degree of) superiority and inferiority of all painters.",
+    "tags": "总论",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 3,
+    "source": "古画品录",
+    "chinese": "图绘者，莫不明劝戒、著升沉，千载寂寥，披图可鉴",
+    "english": "But of all who draw pictures there is not one but may illustrate some exhortation or warning, or show (the causes for) the rise or fall (of some dynasty), and the solitudes and silences of a thousand years maybe seen as in a mirror by merely opening a scroll.",
+    "tags": "总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "All pictures should be classified according to their merits and faults.There are no pictures which do not exercise some influence, be it of an elevating or debasing kind. The silent records of ancient times are unrolled before us when we open a picture."
+  },
+  {
+    "id": 4,
+    "source": "古画品录",
+    "chinese": "虽画有六法，罕能尽该",
+    "english": "But while painting has its six elements, few are able to combine them all together,",
+    "tags": "六法;总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "Although the Six Principles existed (since early times), there were few who could master them all"
+  },
+  {
+    "id": 5,
+    "source": "古画品录",
+    "chinese": "而自古及今，各善一节",
+    "english": "and from ancient times until now each (painter)has excelled in one (particular) branch.",
+    "tags": "六法;总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "yet from ancient to modern times there have been painters skilled in one (or the other)."
+  },
+  {
+    "id": 6,
+    "source": "古画品录",
+    "chinese": "六法者何",
+    "english": "And what are these six elements?",
+    "tags": "六法;总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "Which are these Six Principles?"
+  },
+  {
+    "id": 7,
+    "source": "古画品录",
+    "chinese": "一，气韵生动是也",
+    "english": "First, Spirit Resonance which means vitality:",
+    "tags": "六法;总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "The first is: Spirit-resonance (or Vibration of Vitality) and Life movement."
+  },
+  {
+    "id": 8,
+    "source": "古画品录",
+    "chinese": "二，骨法用笔是也",
+    "english": "second, Bone Method which is (a way of) using the brush:",
+    "tags": "六法;总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "The second is: Bone-manner (Structural) Use of the Brush."
+  },
+  {
+    "id": 9,
+    "source": "古画品录",
+    "chinese": "三，应物象形是也",
+    "english": "third, Correspondence to the Object which means the depicting of forms:",
+    "tags": "六法;总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "The third is: Conform with the Objects (to obtain) Likeness."
+  },
+  {
+    "id": 10,
+    "source": "古画品录",
+    "chinese": "四，随类赋彩是也",
+    "english": "fourth, Suitability to Type which has to do with the laying on of colours:",
+    "tags": "六法;总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "The fourth is: Apply the Colours according to the Characteristics."
+  },
+  {
+    "id": 11,
+    "source": "古画品录",
+    "chinese": "五，经营位置是也",
+    "english": "fifth, Division and Planning, i.e. placing and arrangement:",
+    "tags": "六法;总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "The fifth is:Plan and Design, Place and Position (i.e.Composition)."
+  },
+  {
+    "id": 12,
+    "source": "古画品录",
+    "chinese": "六，传移模写是也",
+    "english": "and sixth, Transmission by Copying, that is to say the copying of models.",
+    "tags": "六法;总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "The sixth is: To Transmit Models by Drawing."
+  },
+  {
+    "id": 13,
+    "source": "古画品录",
+    "chinese": "唯陆探微、卫协备该之矣",
+    "english": "Only Lu T'an-wei and Wei Hsieh completely combined all of these.",
+    "tags": "陆探微;卫协;总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "Only Lu T'an-wei and Wei Hsieh applied completely all (these principles)."
+  },
+  {
+    "id": 14,
+    "source": "古画品录",
+    "chinese": "然迹有巧拙，艺无古今，谨依远近，随其品第，裁成序引",
+    "english": "But whereas works of art may be skillful or clumsy, the art-sense knows no ancient and modern, so respectfully relying upon remote and recent (sources), and following their critical judgements, I have made my decisions and established a hierarchy of merit.",
+    "tags": "总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "There have always been good and bad paintings; art as such is art, whether old or modern. I have now carefully arranged some painters of old and modern times and classified them according to the above principles, but I have cut out all introductory remarks and entered in no discussion of the origin of painting."
+  },
+  {
+    "id": 15,
+    "source": "古画品录",
+    "chinese": "故此所述，不广其源，但传出自神仙，莫之闻见也",
+    "english": "And indeed, if (the scope of) what has been transmitted about this is not wide, it is because concerning the origins (of the art) the tradition merely has it that they proceeded from gods and immortals, and there is none who has heard or seen them.",
+    "tags": "总论",
+    "notes": "",
+    "japanese": "",
+    "siren": "According to tradition, it took its origin from divine beings, but these have never been seen or heard."
+  },
+  {
+    "id": 16,
+    "source": "古画品录",
+    "chinese": "第一品（五人）　",
+    "english": "THE FIRST CLASS (FIVE MEN)",
+    "tags": "第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "I Class, Five Men"
+  },
+  {
+    "id": 17,
+    "source": "古画品录",
+    "chinese": "陆探微，事五代宋明帝，吴人",
+    "english": "LU T'AN-WEI, He served Ming Ti of Sung in the Five Dynasties period and was a native of Wu.",
+    "tags": "陆探微;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Lu T'an-wei from Wu. Epoch of Sung Ming Ti."
+  },
+  {
+    "id": 18,
+    "source": "古画品录",
+    "chinese": "穷理尽性，事绝言象",
+    "english": "He fathomed the principles (of Nature) and exhausted the nature(of man).The matter is beyond the power of speech to describe.",
+    "tags": "陆探微;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "He gave the utmost of reason and character; his works surpassed all explanations in words."
+  },
+  {
+    "id": 19,
+    "source": "古画品录",
+    "chinese": "包前孕后，古今独立",
+    "english": "He embraced what went before him, and gave birth to what succeeded him: and from ancient times up till now he stands alone.",
+    "tags": "陆探微;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "He included all his predecessors and gave birth to all later men. He is the only one from ancient to modern times who stands supreme;"
+  },
+  {
+    "id": 20,
+    "source": "古画品录",
+    "chinese": "非复激扬所以称赞，但价重之极乎上",
+    "english": "Nor is he one whom even (the most) fervent enthusiasm could(adequately) praise. For is he not simply the pinnacle of all that is of highest value?",
+    "tags": "陆探微;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "one cannot sing his praise too highly."
+  },
+  {
+    "id": 21,
+    "source": "古画品录",
+    "chinese": "上品之外，无他寄言，故屈标第一等",
+    "english": "He rises  beyond the highest grade, and that is all that there is to be said. Therefore it is only by injustice that I place him in the first class.",
+    "tags": "陆探微;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "He was truly priceless and superior, absolutely exceptional and beyond definitions. It is only by injustice that he is placed in the first class."
+  },
+  {
+    "id": 22,
+    "source": "古画品录",
+    "chinese": "曹不兴，五代吴时事孙权，吴兴人",
+    "english": "TS'AO PU-HSING, In the time of Wu of the Five Dynasties he served Sun Ch'üan. He was a man of Wu-hsing.",
+    "tags": "曹不兴;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Ts'ao Pu-hsing from Wu-hsing. Epoch of Sun Ch’üan."
+  },
+  {
+    "id": 23,
+    "source": "古画品录",
+    "chinese": "不兴之迹，殆莫复传",
+    "english": "The works of Pu-hsing are scarcely any of them still preserved.",
+    "tags": "曹不兴;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Of Ts'ao Pu-hsing's works almost nothing is left;"
+  },
+  {
+    "id": 24,
+    "source": "古画品录",
+    "chinese": "唯秘阁之内，一龙而已",
+    "english": "Only in the Secret Pavilion a single dragon and that is all.",
+    "tags": "曹不兴;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "only one of his dragon paintings is in the Imperial Collection."
+  },
+  {
+    "id": 25,
+    "source": "古画品录",
+    "chinese": "观其风骨，名岂虚成",
+    "english": "Considering its noble character, how can one say that his fame was built upon nothing.",
+    "tags": "曹不兴;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "If one examines his style,one cannot say that his fame was empty."
+  },
+  {
+    "id": 26,
+    "source": "古画品录",
+    "chinese": "卫协，五代晋时",
+    "english": "WEI HSIEH, Of the Five-Dynasty-Chin period.",
+    "tags": "卫协;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Wei Hsieh. Epoch of Chin dynasty."
+  },
+  {
+    "id": 27,
+    "source": "古画品录",
+    "chinese": "占画之略，至协始精",
+    "english": "With (Wei) Hsieh the summariness of the ancient painters was for the first time (replaced by) elaboration.",
+    "tags": "卫协;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "When in the history of ancient painting one arrives at Wei Hsieh, one finds that he is the first who gives fine details and combines almost all the Six Principles."
+  },
+  {
+    "id": 28,
+    "source": "古画品录",
+    "chinese": "六法之中，迨为兼善",
+    "english": "He came near to being proficient in all the Six Elements at once",
+    "tags": "卫协;第一品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 29,
+    "source": "古画品录",
+    "chinese": "虽不说备形妙，颇得壮气",
+    "english": "and although one may not say that he was perfect in the subtleties of form, he did attain to a high degree of vigour of expression.",
+    "tags": "卫协;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Although he was not perfect in drawing, he obtained strength and vitality."
+  },
+  {
+    "id": 30,
+    "source": "古画品录",
+    "chinese": "陵跨群雄，旷代绝笔",
+    "english": "He towered on high,standing astride the crowd of (other) great men; a peerless (master of the) brush, he swept the world clean (of competitors).",
+    "tags": "卫协;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "He surpassed all the great masters of ancient times and his brush-work was exceedingly good."
+  },
+  {
+    "id": 31,
+    "source": "古画品录",
+    "chinese": "张墨、荀勗\n风范气候，极妙参神",
+    "english": "CHANG MO AND HSüN HSü, In noble quality and atmospheric feeling they attained the utmost in subtlety and partook of the divine.",
+    "tags": "张墨;荀勗;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Chang Mo and Hsün Hsü. Epoch of Chin dynasty. Their style and temperament were divinely wonderful."
+  },
+  {
+    "id": 32,
+    "source": "古画品录",
+    "chinese": "但取精灵，遗其骨法",
+    "english": "They seized only the essence and soul, and left the bone method  aside.",
+    "tags": "张墨;荀勗;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "They grasped the spiritual essence of things."
+  },
+  {
+    "id": 33,
+    "source": "古画品录",
+    "chinese": "若拘以体物，则未见精粹",
+    "english": "If one sticks to their manner of rendering objects, then one will still not see this pure essence (in their work).",
+    "tags": "张墨;荀勗;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "They freed themselves from the bone manner (drawing in detail) and were no longer bound by the shapes of things."
+  },
+  {
+    "id": 34,
+    "source": "古画品录",
+    "chinese": "若取之外，方厌高腴，可谓微妙也",
+    "english": "But if one takes them from (a point ofview) beyond the forms, only then may one enjoy their rich quality to the full. And this may be called a delicate and subtle matter.",
+    "tags": "张墨;荀勗;第一品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Their works were not remarkable for refinement and purity, but they contained something beyond the shapes and were satiated and rich.They may indeed be called subtle and wonderful."
+  },
+  {
+    "id": 35,
+    "source": "古画品录",
+    "chinese": "第二品（三人）",
+    "english": "THE SECOND CLASS (THREE MEN)",
+    "tags": "第二品",
+    "notes": "",
+    "japanese": "",
+    "siren": "II Class (Three Men)"
+  },
+  {
+    "id": 36,
+    "source": "古画品录",
+    "chinese": "顾骏之\n神韵气力，不逮前贤",
+    "english": "KU CHüN-CHIH, In soul resonance and nervous energy he did not come up to the wise men of earlier times",
+    "tags": "顾骏之;第二品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Ku Tsun-chih"
+  },
+  {
+    "id": 37,
+    "source": "古画品录",
+    "chinese": "精微谨细，有过往哲",
+    "english": "but in refinement and delicacy, pains-takingness and detail he sometimes surpassed the most discerning men of the past.",
+    "tags": "顾骏之;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 38,
+    "source": "古画品录",
+    "chinese": "始变古则今，赋彩制形，皆创新意",
+    "english": "He was the first to develop the old and make the patterns for the new. Both in the laying on of colours and the delineation of form he was the originator of new ideas,",
+    "tags": "顾骏之;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 39,
+    "source": "古画品录",
+    "chinese": "如包牺始更封体，史籀初改画法",
+    "english": "just as P'ao Hsi was the first to amend the Trigrams, and Shih Chou the first to reform the method of writing.",
+    "tags": "顾骏之;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 40,
+    "source": "古画品录",
+    "chinese": "常结构层楼，以为画所",
+    "english": "He once built a tower of several storeys which he used as his atelier.",
+    "tags": "顾骏之;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 41,
+    "source": "古画品录",
+    "chinese": "风雨炎燠之时，故不操笔",
+    "english": "At times when the wind and rain blustered or lowered, he would on no account take up his brush.",
+    "tags": "顾骏之;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 42,
+    "source": "古画品录",
+    "chinese": "天和气爽之日，方乃染毫",
+    "english": "But on days when the skies were favourable, and the air was crisp, then and then only would he colour the tip (of his brush with ink).",
+    "tags": "顾骏之;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 43,
+    "source": "古画品录",
+    "chinese": "登楼去梯，妻子罕见",
+    "english": "He would climb up into his tower and remove the ladder, so that his wife and children seldom saw him.",
+    "tags": "顾骏之;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 44,
+    "source": "古画品录",
+    "chinese": "画蝉雀，骏之始也",
+    "english": "The painting of (the genre) cicadas and sparrows began with Hsün-chih",
+    "tags": "顾骏之;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 45,
+    "source": "古画品录",
+    "chinese": "宋大明中，天下莫敢竞矣",
+    "english": "and during the Ta Ming era (457-464) of the Sung dynasty no one under Heaven dared to dispute his supremacy.",
+    "tags": "顾骏之;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 46,
+    "source": "古画品录",
+    "chinese": "陆绥，体韵遒举，风彩飘然",
+    "english": "LU SUI, His style-tone was impetuous and volatile: and the atmosphere (of his paintings) is like a whirlwind.",
+    "tags": "陆绥;第二品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Lu Sui"
+  },
+  {
+    "id": 47,
+    "source": "古画品录",
+    "chinese": "一点一拂，动笔皆奇",
+    "english": "With every dot and every sweep, the movements of his brush were always unusual.",
+    "tags": "陆绥;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 48,
+    "source": "古画品录",
+    "chinese": "传世盖少，所谓希见卷轴，故为宝也",
+    "english": "Since(works by him) that have been handed down to our times are indeed very few, they are what may be called rarely seen scrolls, and there-fore they are regarded as treasures.",
+    "tags": "陆绥;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 49,
+    "source": "古画品录",
+    "chinese": "袁蒨，比方陆氏，最为高逸",
+    "english": "YUAN CH'IEN, Compared with Lu (T'an-wei) he is most lofty and aloof,",
+    "tags": "陆探微;袁蒨",
+    "notes": "",
+    "japanese": "",
+    "siren": "Yüan Ch'ien"
+  },
+  {
+    "id": 50,
+    "source": "古画品录",
+    "chinese": "象人之妙，亚美前贤",
+    "english": "but in subtlety of portraying people he remains inferior in beauty to the former sage.",
+    "tags": "袁蒨;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 51,
+    "source": "古画品录",
+    "chinese": "但志守师法，更无新意",
+    "english": "He thought only of keeping to his master's methods, and was quite without new ideas.",
+    "tags": "袁蒨;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 52,
+    "source": "古画品录",
+    "chinese": "然和璧微玷，岂贬十城之价也",
+    "english": "However, a slight flaw in the jade of (Pien) Ho could scarcely cause it to be worthless than the price of ten walled cities.",
+    "tags": "袁蒨;第二品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 53,
+    "source": "古画品录",
+    "chinese": "第三品（九人）",
+    "english": "THE THIRD CLASS (NINE MEN)",
+    "tags": "第三品",
+    "notes": "",
+    "japanese": "",
+    "siren": "III Class (Nine Men)"
+  },
+  {
+    "id": 54,
+    "source": "古画品录",
+    "chinese": "姚曇度，画有逸方，巧变锋出，魑魅神鬼，皆能绝妙",
+    "english": "YAO T'AN-TU, His paintings show rare skill, and ingenious variations bristle like the spearpoints (of a phalanx). He was proficient both in(the genre) sprites and fairies and in (that of) divinities and demons, and far surpassed all others of the same school in subtlety.",
+    "tags": "姚曇度;第三品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Yao T'an-tu"
+  },
+  {
+    "id": 55,
+    "source": "古画品录",
+    "chinese": "奇正咸宜，雅郑兼善，莫不俊拔，出人意表，天挺生知，非学所及",
+    "english": "In very truth he excelled equally in the classical (music) and the (strains of) Cheng1. There was nothing in which he was not great and exceptional beyond people's power to conceive. He was by nature distinguished and was born with understanding such as no study could attain.",
+    "tags": "姚曇度;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 56,
+    "source": "古画品录",
+    "chinese": "虽纤微长短，往往失之",
+    "english": "Although delicate and precise in his pro-portions he sometimes missed them,",
+    "tags": "姚曇度;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 57,
+    "source": "古画品录",
+    "chinese": "而舆皂之中，莫与为匹",
+    "english": "but among his camp followers there was no one to match him.",
+    "tags": "姚曇度;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 58,
+    "source": "古画品录",
+    "chinese": "岂直栋梁萧艾，可搪突璵璠者哉",
+    "english": "How should he be (considered) mere artemisia on the rafters: he is indeed one who may be compared with precious stones.",
+    "tags": "姚曇度;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 59,
+    "source": "古画品录",
+    "chinese": "顾恺之，五代晋时晋陵无锡人",
+    "english": "KU K'AI-CHIH, Period of Five-Dynasty Chin. A man of Wu-hsi in Chin-ling.",
+    "tags": "顾恺之;第三品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Ku K'ai-chih, from Wu-hsi.Epoch of Chin dynasty."
+  },
+  {
+    "id": 60,
+    "source": "古画品录",
+    "chinese": "字长康，小字虎头",
+    "english": "Style, Ch'ang-k'ang, nicknamed Hu-t'ou or Tiger Head.",
+    "tags": "顾恺之;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 61,
+    "source": "古画品录",
+    "chinese": "除体精微，笔无妄下",
+    "english": "His style and execution were refined and minute and he never used his brush haphazardly.",
+    "tags": "顾恺之;第三品",
+    "notes": "",
+    "japanese": "",
+    "siren": "His style was fine and subtle, his brush without a flaw, yet his workmanship was inferior to his ideas, and (in his case) fame surpassed reality."
+  },
+  {
+    "id": 62,
+    "source": "古画品录",
+    "chinese": "但迹不逮意，声过其实",
+    "english": "But his works did not come up to his conceptions, and his fame goes beyond the reality.",
+    "tags": "顾恺之;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 63,
+    "source": "古画品录",
+    "chinese": "毛惠远，画体周赡，无适弗该",
+    "english": "MAO HUI-YüAN , His style of painting was many-sided and rich, and there was nothing that he tried that he did not accomplish perfectly",
+    "tags": "毛惠远;第三品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Mao Hui-yüan"
+  },
+  {
+    "id": 64,
+    "source": "古画品录",
+    "chinese": "出入穷奇，纵横逸笔，力遒韵雅，超迈绝伦",
+    "english": "Now coming out and now going in, he exhausted the possibilities of the extraordinary: now up and down, now back and forth, he let his brush run wild. His strength and impetuosity have resonance and classic elegance: and his transcendent excellence was beyond all categories.",
+    "tags": "毛惠远;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 65,
+    "source": "古画品录",
+    "chinese": "其挥霍必也极妙，至于定质，愧然未尽其善",
+    "english": "In dexterity and deftness he never failed to reach the very height of subtlety, but when it was a question of making things look solid, then he was lumpish and (showed that) his mastery in this was not yet complete.",
+    "tags": "毛惠远;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 66,
+    "source": "古画品录",
+    "chinese": "神鬼及马，泥滞于时，颇有拙也",
+    "english": "In divinities and demons and horses he gets mired and bogged down in his rendering of them and is somewhat clumsy.",
+    "tags": "毛惠远;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 67,
+    "source": "古画品录",
+    "chinese": "夏瞻，虽气力不足，而精彩有余",
+    "english": "HSIA CHAN, Although he is lacking in nervous energy, yet his refinement of coloration leaves nothing to be desired.",
+    "tags": "夏瞻;第三品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Hsia Chan"
+  },
+  {
+    "id": 68,
+    "source": "古画品录",
+    "chinese": "擅名远代，事非虚美",
+    "english": "Since he commands a reputation in this remote age, his work is not beautiful in vain.",
+    "tags": "夏瞻;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 69,
+    "source": "古画品录",
+    "chinese": "戴逵，情韵连绵，风趣巧拔",
+    "english": "TAI K'UEI, His emotional resonance was continuous and unbroken, and his atmosphere-flavour ingenious and exceptional.",
+    "tags": "戴逵;第三品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Tai K'uei. The emotional resonance of his works was of a continuous kind and their expression was brought out with great skill."
+  },
+  {
+    "id": 70,
+    "source": "古画品录",
+    "chinese": "善图贤圣，百工所范",
+    "english": "He excelled in depicting Wise Men and Sages, which have become models for all craftsmen.",
+    "tags": "戴逵;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 71,
+    "source": "古画品录",
+    "chinese": "荀卫以后，实为领袖",
+    "english": "After the time of Hsün (Hsü) and Wei (Hsieh)he was in truth the collar and the sleeve.",
+    "tags": "荀勗;卫协;戴逵;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 72,
+    "source": "古画品录",
+    "chinese": "及乎子颙，能继其善",
+    "english": "Later his son Yung was able to inherit the (same standard of) excellence.",
+    "tags": "戴逵;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 73,
+    "source": "古画品录",
+    "chinese": "江僧宝，斟酌袁陆，亲渐朱蓝",
+    "english": "CHIANG SENG-PAO, Through mature study of Yüan (Ch'ien) and Lu (T'an-wei) he himself became immersed in vermilion and indigo.",
+    "tags": "袁蒨;陆探微;江僧宝;第三品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Chiang Sêng-pao"
+  },
+  {
+    "id": 74,
+    "source": "古画品录",
+    "chinese": "用笔骨梗，甚有师法",
+    "english": "His use of the brush was bold and straightforward, and to a great extent shows the methods of his masters.",
+    "tags": "江僧宝;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 75,
+    "source": "古画品录",
+    "chinese": "像人之外，非其所长也",
+    "english": "But except for the representation of people there was nothing in which he was superior.",
+    "tags": "江僧宝;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 76,
+    "source": "古画品录",
+    "chinese": "吴暕，体法雅媚，制置才巧",
+    "english": "WU CHIEN, His execution and methods were elegant and charming: his design and composition able and ingenious.",
+    "tags": "吴暕;第三品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Wu Chien"
+  },
+  {
+    "id": 77,
+    "source": "古画品录",
+    "chinese": "擅美当年，有声京洛",
+    "english": "He commanded the praise of his own time, and enjoyed renown at the capital Lo(-yang).",
+    "tags": "吴暕;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 78,
+    "source": "古画品录",
+    "chinese": "张则，意思横逸，动笔新奇",
+    "english": "CHANG TSE, His ideas and thoughts ran riot, and he had but to move his brush to be original.",
+    "tags": "张则;第三品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Chang Tsê"
+  },
+  {
+    "id": 79,
+    "source": "古画品录",
+    "chinese": "师心独见，鄙于综采",
+    "english": "His own mind was his master, and his views were his own, and he was sparing in his adaptations (of others ideas).",
+    "tags": "张则;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 80,
+    "source": "古画品录",
+    "chinese": "变巧不竭，若环之无端，景多触目，谢题徐落云，此二人后，不得预焉",
+    "english": "His versatile ingenuity was inexhaustible like a circle's being without ends, and in his (painting of) scenery there is much that strikes the eye. Hsieh (also) mentions Hsü and Lo (?)but these two men afterwards have not been provided with (a biography).",
+    "tags": "张则;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 81,
+    "source": "古画品录",
+    "chinese": "陆杲\n体制不凡，跨迈流俗",
+    "english": "LU KAO, The tone of his execution was uncommon, and he strode over (the heads of) the transient and vulgar.",
+    "tags": "陆杲;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 82,
+    "source": "古画品录",
+    "chinese": "时有合作，往往出人，点画之间",
+    "english": "At times when he worked with other painters he would frequently stand out from among the rest, yet among his dots and strokes corrections are scattered about at the slightest provocation.",
+    "tags": "陆杲;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 83,
+    "source": "古画品录",
+    "chinese": "动流恢服，传于后者，殆不盈握",
+    "english": "(Works by him) that have been handed down to (these) later times scarcely make up a handful",
+    "tags": "陆杲;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 84,
+    "source": "古画品录",
+    "chinese": "桂枝一芳，足惩本性",
+    "english": "although even one whiff of a cassia branch is enough to make one reflect on (the tree's) original nature",
+    "tags": "陆杲;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 85,
+    "source": "古画品录",
+    "chinese": "流液之素，难效其功",
+    "english": "it is hard to bring to full effect the virtue of the essence of the sap that flows(in such a branch).",
+    "tags": "陆杲;第三品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 86,
+    "source": "古画品录",
+    "chinese": "第四品（五人）",
+    "english": "THE FOURTH CLASS (FIVE MEN)",
+    "tags": "第四品",
+    "notes": "",
+    "japanese": "",
+    "siren": "IV Class (Five Men)"
+  },
+  {
+    "id": 87,
+    "source": "古画品录",
+    "chinese": "蘧道愍、章继伯，并善寺壁，兼长画扇",
+    "english": "CH'ü TAO-MIN AND CHANG CHI-PO, Both excelled at painting on temple walls, and combined this with excelling in painting on fans",
+    "tags": "章继伯;蘧道愍;第四品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Ch’ü Tao-min and Chang Chi-pai"
+  },
+  {
+    "id": 88,
+    "source": "古画品录",
+    "chinese": "人马分数，毫厘不失，别体之妙，亦为入神",
+    "english": "In (their paintings of) men and horses they never missed the proportions by so much as a hair, and their skill in other genres also penetrated to the divine.",
+    "tags": "章继伯;蘧道愍;第四品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 89,
+    "source": "古画品录",
+    "chinese": "顾宝先，全法陆家，事之宗禀",
+    "english": "KU PAO-HSIEN [KU PAO-KUANG]，He based his methods entirely on those of the school of Lu (T'an-wei), and everything (in his work) was derived from it.",
+    "tags": "顾宝先;陆探微;第四品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Ku Pao-hsien"
+  },
+  {
+    "id": 90,
+    "source": "古画品录",
+    "chinese": "方之袁蒨，可谓小巫",
+    "english": "Comparing him with Yüan  Ch'ien he may be called the lesser Shaman.",
+    "tags": "顾宝先;袁蒨;第四品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 91,
+    "source": "古画品录",
+    "chinese": "王微、史道硕，五代晋时，并师荀卫，各体善能",
+    "english": "WANG WEI AND SHIH TAO-SHIH [Five Dynasty Chin period], Both learned from Hsün (Hsü) and Wei (Hsieh) and were skilled in every form of expression.",
+    "tags": "史道硕;荀勗;卫协;王微;第四品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Wang Wei and Shih Tao-shuo"
+  },
+  {
+    "id": 92,
+    "source": "古画品录",
+    "chinese": "王得其细，史传似真",
+    "english": "However, Wang succeeded in(imitating) their details, and Shih transmits their reality.",
+    "tags": "史道硕;王微;第四品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 93,
+    "source": "古画品录",
+    "chinese": "细而论之，景玄为劣",
+    "english": "To say it more precisely, Ching-hsüan (Wang Wei) was the lesser (of the two).",
+    "tags": "史道硕;王微;第四品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 94,
+    "source": "古画品录",
+    "chinese": "第五品（三人）",
+    "english": "THE FIFTH CLASS (THREE MEN)",
+    "tags": "第五品",
+    "notes": "",
+    "japanese": "",
+    "siren": "V Class (Three Men)"
+  },
+  {
+    "id": 95,
+    "source": "古画品录",
+    "chinese": "刘顼，用意绵密，画体简细，而笔迹困弱，形制单省",
+    "english": "LIU HSU\n[LIU CH'l]\nHis attention (to detail) was unremitting and close, and his style of painting slight and delicate, but his brushwork  was confused and weak and his delineation of form simple and abbreviated.",
+    "tags": "刘顼;第五品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Liu Hsü"
+  },
+  {
+    "id": 96,
+    "source": "古画品录",
+    "chinese": "其于所长，妇人为最，但纤细过度，翻更失真，然观察祥审，甚得姿态",
+    "english": "Among the subjects in which he excelled he did women best, But because of his excessive delicacy and detail, contrary to what one would expect, he only failed in his likenesses all the more. However, if one examines (his paintings of women) with care, one finds that he renders their manner and attitudes very well.",
+    "tags": "刘顼;第五品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 97,
+    "source": "古画品录",
+    "chinese": "晋明帝，讳绍，元帝长子，师王厉",
+    "english": "THE EMPEROR MING OF THE CHIN DYNASTY, The eldest son of the Emperor whose tabu-name was Shao Yian.He learned from Wang Li.",
+    "tags": "晋明帝;王厉;第五品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Chin Ming Ti"
+  },
+  {
+    "id": 98,
+    "source": "古画品录",
+    "chinese": "虽略于形色，颇得神气",
+    "english": "Although he was sketchy as to form and colouring, he was rather successful in getting the spirit.",
+    "tags": "晋明帝;第五品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 99,
+    "source": "古画品录",
+    "chinese": "笔迹超越，亦有奇观",
+    "english": "His brush tracks have a transcendent quality, and there are also some that are (primarily) curious to look at.",
+    "tags": "晋明帝;第五品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 100,
+    "source": "古画品录",
+    "chinese": "刘胤祖，蝉雀特画微妙，笔迹超越，爽俊不凡",
+    "english": "LIU YIN-TSU\nHe exhausted the finesses and subtleties especially of (the genre)cicadas and sparrows, and his brush-work had a transcendent quality, fresh and splendid and beyond the common.",
+    "tags": "刘胤祖;第五品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Liu Shao-tzu"
+  },
+  {
+    "id": 101,
+    "source": "古画品录",
+    "chinese": "刘绍祖\n善于传写，不闲其思",
+    "english": "LIU SHAO-TSU\nHe excelled in copying but did not study the thought of those(whose works he copied).",
+    "tags": "刘绍祖;第五品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 102,
+    "source": "古画品录",
+    "chinese": "至于雀鼠，笔迹历落，往往出群",
+    "english": "In (the genre) sparrows and squirrels his brushwork is bold and free, and occasionally stands out from the crowd.",
+    "tags": "刘绍祖;第五品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 103,
+    "source": "古画品录",
+    "chinese": "时人为之语，号曰“移画”，然述而不作，非画所先",
+    "english": "His contemporaries in speaking of him called him \"the copyist\". But \"to transmit without originating\" is not what painting puts first.",
+    "tags": "刘绍祖;第五品",
+    "notes": "",
+    "japanese": ""
+  },
+  {
+    "id": 104,
+    "source": "古画品录",
+    "chinese": "第六品（二人）",
+    "english": "THE SIXTH CLASS (TWO MEN)",
+    "tags": "第六品",
+    "notes": "",
+    "japanese": "",
+    "siren": "VI Class (Two Men)"
+  },
+  {
+    "id": 105,
+    "source": "古画品录",
+    "chinese": "宋炳，炳明于六法，迄无适善，而含毫命素，必有损益，迹非准的，意足师放",
+    "english": "SUNG PING\n[TSUNG PING]\nAlthough Ping had some understanding of the six elements, he was after all without the corresponding skills.Yet whenever one puts one's brush in one's mouth and calls for plain silk there cannot fail to be losses and gains. His works are not standards(of quality) but his ideas are good enough to learn from and imitate,",
+    "tags": "宋炳;第六品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Tsung Ping"
+  },
+  {
+    "id": 106,
+    "source": "古画品录",
+    "chinese": "丁光，虽擅名蝉雀，而笔迹轻羸",
+    "english": "TING KUANG\nAlthough he commanded a reputation in cicadas and sparrows, yet his brush-work was light and thin.",
+    "tags": "丁光;第六品",
+    "notes": "",
+    "japanese": "",
+    "siren": "Ting Kuang"
+  },
+  {
+    "id": 107,
+    "source": "古画品录",
+    "chinese": "非不精谨，乏于生气",
+    "english": "It was not that he was not refined and painstaking (in his work) but that he was lacking in vital energy.",
+    "tags": "丁光;第六品",
+    "notes": "",
+    "japanese": ""
+  }
+]
