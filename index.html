@@ -125,9 +125,18 @@
         .eng-text {
             font-size: 0.75rem;
             padding-right: 5rem;
-            cursor: pointer;
+            user-select: text;
+            -webkit-user-select: text;
         }
         @media (min-width: 768px) { .eng-text { font-size: 0.8rem; padding-right: 6rem; } }
+        
+        /* 选中单词的高亮样式 */
+        .eng-text ::selection {
+            background: #f9e45b;
+        }
+        .eng-text::-moz-selection {
+            background: #f9e45b;
+        }
         
         .btn-group {
             position: absolute;
@@ -239,13 +248,25 @@
         
         .loading, .no-results { text-align: center; padding: 2rem; color: #8aa0ae; }
         .stats { margin-top: 1rem; font-size: 0.75rem; color: #4b6a7f; border-top: 1px solid #e2edf2; padding-top: 1rem; }
+        
+        /* 移动端适配：增大按钮点击区域 */
+        @media (max-width: 768px) {
+            .icon-btn {
+                padding: 0.3rem 0.6rem;
+                font-size: 1rem;
+            }
+            .eng-text {
+                font-size: 0.85rem;
+                line-height: 1.5;
+            }
+        }
     </style>
 </head>
 <body>
 <div class="container">
     <div class="hero">
         <h1>画论语义典藏 · 智能语料库</h1>
-        <div class="sub">《古画品录》| 中英双语 | 双击查词 | 整句翻译 | 语音朗读 | 标签检索</div>
+        <div class="sub">《古画品录》| 中英双语 | 选中单词查词 | 整句翻译 | 语音朗读 | 全平台适配</div>
     </div>
     <div class="search-panel">
         <div class="search-flex">
@@ -286,7 +307,7 @@
         } catch(e) { return '翻译服务暂时不可用'; }
     }
     
-    // 双击跳转韦氏词典
+    // 韦氏词典查词（传入选中的单词）
     function lookupMerriamWebster(word) {
         if (!word) return;
         let clean = word.trim().replace(/[^\w\-'\s]/g, '');
@@ -295,18 +316,49 @@
         }
     }
     
-    function allowAudio() { if (!audioAllowed) { audioAllowed = true; showToast('🔊 语音已激活'); } }
-    document.addEventListener('click', allowAudio, { once: true }); 
-    document.addEventListener('touchstart', allowAudio, { once: true });
+    // 获取用户选中的单词
+    function getSelectedWord() {
+        const selection = window.getSelection();
+        if (!selection || selection.rangeCount === 0) return null;
+        const selectedText = selection.toString().trim();
+        if (!selectedText) return null;
+        // 提取单词（字母和连字符）
+        const wordMatch = selectedText.match(/[a-zA-Z'-]+/);
+        return wordMatch ? wordMatch[0] : null;
+    }
     
+    // 播放语音
     function speakEnglish(text) { 
         if (!text) return; 
-        if (!audioAllowed) { showToast('请先点击页面激活语音'); return; } 
-        let u = new SpeechSynthesisUtterance(text); 
-        u.lang = 'en-US'; 
-        u.rate = 0.9; 
-        window.speechSynthesis.cancel(); 
-        window.speechSynthesis.speak(u); 
+        if (!window.speechSynthesis) {
+            showToast('您的浏览器不支持语音朗读');
+            return;
+        }
+        try {
+            // 取消任何正在进行的语音
+            window.speechSynthesis.cancel();
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'en-US';
+            utterance.rate = 0.8;
+            utterance.onstart = () => console.log('语音开始');
+            utterance.onerror = (e) => {
+                console.error('语音错误:', e);
+                showToast('语音播放失败，请重试');
+            };
+            utterance.onend = () => console.log('语音结束');
+            window.speechSynthesis.speak(utterance);
+        } catch(e) {
+            console.error(e);
+            showToast('语音播放失败');
+        }
+    }
+    
+    // 激活语音（移动端需要用户明确点击按钮）
+    function initAudio() {
+        if (!audioAllowed) {
+            audioAllowed = true;
+            showToast('🔊 语音已激活，点击喇叭即可朗读');
+        }
     }
     
     function levenshteinDistance(a,b){let m=Array(b.length+1).fill().map(()=>Array(a.length+1).fill());for(let i=0;i<=a.length;i++)m[0][i]=i;for(let j=0;j<=b.length;j++)m[j][0]=j;for(let j=1;j<=b.length;j++)for(let i=1;i<=a.length;i++){let c=a[i-1]===b[j-1]?0:1;m[j][i]=Math.min(m[j][i-1]+1,m[j-1][i]+1,m[j-1][i-1]+c);}return m[b.length][a.length];}
@@ -316,33 +368,39 @@
     function highlightText(t,k){if(!k||!t)return t;let kl=k.toLowerCase();if(!t.toLowerCase().includes(kl))return t;let re=new RegExp(`(${k.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')})`,'gi');return t.replace(re,'<span class="highlight">$1</span>');}
     function renderTags(ts){if(!ts)return '';return ts.split(';').map(t=>`<span class="tag-link" data-tag="${t}">🏷️ ${t}</span>`).join('');}
     
-    // 绑定双击查词
-    function bindDoubleClick() {
-        document.addEventListener('dblclick', e => {
-            let el = e.target.closest('.eng-text');
-            if (!el) return;
-            let text = el.getAttribute('data-fulltext') || el.innerText;
-            let words = text.match(/[a-zA-Z']+/g);
-            if (words && words.length > 0) {
-                lookupMerriamWebster(words[0]);
+    // 绑定查词：用户选中单词后弹出提示并跳转
+    function bindWordSelection() {
+        // 监听鼠标松开事件（PC端选中）
+        document.addEventListener('mouseup', (e) => {
+            const target = e.target.closest('.eng-text');
+            if (!target) return;
+            const word = getSelectedWord();
+            if (word && word.length >= 2) {
+                showToast(`🔍 查词: ${word}`);
+                lookupMerriamWebster(word);
+                // 清除选中
+                window.getSelection().removeAllRanges();
             }
         });
-        // 移动端长按查词
-        let pressTimer = null;
-        document.addEventListener('touchstart', e => {
-            let el = e.target.closest('.eng-text');
-            if (!el) return;
-            pressTimer = setTimeout(() => {
-                let text = el.getAttribute('data-fulltext') || el.innerText;
-                let words = text.match(/[a-zA-Z']+/g);
-                if (words && words.length > 0) {
-                    showToast(`🔍 查词: ${words[0]}`);
-                    lookupMerriamWebster(words[0]);
+        
+        // 移动端：监听触摸结束，检测选中
+        let touchEndTimer = null;
+        document.addEventListener('touchend', (e) => {
+            const target = e.target.closest('.eng-text');
+            if (!target) return;
+            // 给移动端一点时间完成选中
+            touchEndTimer = setTimeout(() => {
+                const word = getSelectedWord();
+                if (word && word.length >= 2) {
+                    showToast(`🔍 查词: ${word}`);
+                    lookupMerriamWebster(word);
+                    window.getSelection().removeAllRanges();
                 }
-            }, 500);
+            }, 100);
         });
-        document.addEventListener('touchend', () => { if (pressTimer) clearTimeout(pressTimer); });
-        document.addEventListener('touchmove', () => { if (pressTimer) clearTimeout(pressTimer); });
+        document.addEventListener('touchstart', () => {
+            if (touchEndTimer) clearTimeout(touchEndTimer);
+        });
     }
     
     function renderResults(data,kw){
@@ -376,11 +434,14 @@
             h+=`</div>`;
         }
         c.innerHTML=h;
-        document.getElementById('stats').innerHTML=`共 ${corpusData.length} 条 · ${data.length} 条匹配`;
+        document.getElementById('stats').innerHTML=`共 ${corpusData.length} 条 · ${data.length} 条匹配 · 选中单词自动查词`;
         
         document.querySelectorAll('.tag-link').forEach(el=>el.addEventListener('click',e=>{e.stopPropagation();let tag=el.getAttribute('data-tag');document.getElementById('searchInput').value=tag;document.getElementById('searchField').value='tags';document.getElementById('fuzzyCheckbox').checked=false;performSearch(tag,false);}));
-        document.querySelectorAll('.speak-btn').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();speakEnglish(btn.getAttribute('data-text'));}));
+        
+        document.querySelectorAll('.speak-btn').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();initAudio();speakEnglish(btn.getAttribute('data-text'));}));
+        
         document.querySelectorAll('.translate-btn').forEach(btn=>btn.addEventListener('click',async e=>{e.stopPropagation();let sentence=btn.getAttribute('data-sentence');if(sentence){showToast('翻译中...');let trans=await translateSentence(sentence);showTranslatePopup(sentence,trans);}}));
+        
         document.querySelectorAll('.card').forEach(cd=>cd.addEventListener('click',e=>{if(e.target.classList.contains('speak-btn')||e.target.classList.contains('translate-btn')||e.target.classList.contains('tag-link'))return;let id=parseInt(cd.getAttribute('data-id'));let it=corpusData.find(d=>d.id===id);if(it)showModal(it);}));
     }
     
@@ -392,7 +453,7 @@
             ${si?`<div class="eng-block"><div class="eng-header">英 (Siren)</div><div class="eng-text">${si}</div><div class="btn-group"><button class="icon-btn speak-btn" data-text="${si.replace(/"/g,'&quot;')}">🔊</button><button class="icon-btn translate-btn" data-sentence="${si.replace(/"/g,'&quot;')}">📖 中</button></div></div>`:''}
             ${it.tags?`<div style="margin-top:1rem;"><strong>🏷️ 标签:</strong> ${it.tags.split(';').map(t=>`<span class="tag-link" data-tag="${t}">${t}</span>`).join('')}</div>`:''}`;
         m.style.display='flex';
-        b.querySelectorAll('.speak-btn').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();speakEnglish(btn.getAttribute('data-text'));}));
+        b.querySelectorAll('.speak-btn').forEach(btn=>btn.addEventListener('click',e=>{e.stopPropagation();initAudio();speakEnglish(btn.getAttribute('data-text'));}));
         b.querySelectorAll('.translate-btn').forEach(btn=>btn.addEventListener('click',async e=>{e.stopPropagation();let sentence=btn.getAttribute('data-sentence');if(sentence){showToast('翻译中...');let trans=await translateSentence(sentence);showTranslatePopup(sentence,trans);}}));
         b.querySelectorAll('.tag-link').forEach(el=>el.addEventListener('click',()=>{let tag=el.getAttribute('data-tag');document.getElementById('searchInput').value=tag;document.getElementById('searchField').value='tags';document.getElementById('fuzzyCheckbox').checked=false;performSearch(tag,false);m.style.display='none';}));
     }
@@ -428,9 +489,9 @@
             allTags.clear();
             corpusData.forEach(it=>{if(it.tags)it.tags.split(';').forEach(t=>{if(!allTags.has(t))allTags.set(t,it.id);});});
             updateFilter();
-            document.getElementById('stats').innerHTML=`✅ ${corpusData.length}条语料 · ${allTags.size}个标签 · 双击英文跳韦氏词典`;
+            document.getElementById('stats').innerHTML=`✅ ${corpusData.length}条语料 · ${allTags.size}个标签 · 选中单词自动查词`;
             renderResults(corpusData,'');
-            bindDoubleClick();
+            bindWordSelection();
         }catch(e){document.getElementById('results').innerHTML='<div class="loading">⚠️ 无法加载 data.json</div>';}
     }
     
